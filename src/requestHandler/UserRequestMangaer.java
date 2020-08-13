@@ -13,12 +13,12 @@ public class UserRequestMangaer {
 	public ArrayList<Request> getDoneRequests(){
 		return doneRequests;
 	}
-	public void newTask(Request task) {
-		if (this.waitingRequests.get(task.rate) == null) {
-			this.waitingRequests.put(task.rate, new ArrayList<>());
+	public void newRequest(Request req) {
+		if (this.waitingRequests.get(req.rate) == null) {
+			this.waitingRequests.put(req.rate, new ArrayList<>());
 		}
-		this.waitingRequests.get(task.rate).add(task);
-		System.out.println("new task added for user : " + task.userId + ", rate: " + task.rate);
+		this.waitingRequests.get(req.rate).add(req);
+		System.out.println("new task added for user : " + req.userId + ", rate: " + req.rate);
 	}
 
 	public int getLowestRateTheMostImportent() {
@@ -37,7 +37,7 @@ public class UserRequestMangaer {
 		return lowestRate;
 	}
 
-	public void handleRequestInRateOrder(String userId) throws InterruptedException, Exception {
+	public void handleRequestInRateOrder() throws InterruptedException, Exception {
 
 		int lowestRate = getLowestRateTheMostImportent();
 		// taking all the task of the current lowest rate the is the most important
@@ -67,7 +67,7 @@ public class UserRequestMangaer {
 
 		// if is not empty its men that we still have more request waiting
 		if (!this.waitingRequests.isEmpty()) {
-			this.handleRequestInRateOrder(userId);
+			this.handleRequestInRateOrder();
 		}
 
 	}

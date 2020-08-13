@@ -1,6 +1,5 @@
 package requestHandler;
 
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -112,7 +111,7 @@ class MapHelper implements Runnable {
 		}
 
 		// here we add the tasks to the waiting queue
-		map.get(this.request.userId).newTask(this.request);
+		map.get(this.request.userId).newRequest(this.request);
 
 		// first important part because every thing will happen synchronize only after
 		// the put statement
@@ -123,7 +122,7 @@ class MapHelper implements Runnable {
 
 		try {
 			synchronized (this.request.userId) {
-				map.get(this.request.userId).handleRequestInRateOrder(this.request.userId);
+				map.get(this.request.userId).handleRequestInRateOrder();
 			}
 		} catch (Exception e) {
 			System.out.println(e);

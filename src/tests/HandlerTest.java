@@ -36,7 +36,7 @@ class HandlerTest {
 		handler.handleRequest( new Request("7", 8, "Eating poulkes"));
 		handler.handleRequest( new Request("7", 8, "Eating poulkes"));
 		handler.handleRequest( new Request("8", 0, "Eating poulkes"));
-		handler.handleRequest( new Request("8", 2, "Eating poulkes"));
+		handler.handleRequest( new Request("8", 2, "Making balagan"));
 		handler.handleRequest( new Request("9", 1, "Eating poulkes"));
 		handler.handleRequest( new Request("9", 8, "Making Tshunt"));
 		handler.handleRequest( new Request("9", 3, "Eating poulkes"));
@@ -49,7 +49,7 @@ class HandlerTest {
 		handler.handleRequest( new Request("4", 1, "Washing hands"));
 		handler.handleRequest( new Request("4", 0, "Washing hands"));
 		
-		Thread.sleep(40000);
+		Thread.sleep(10000);
 		
 		conMap = handler.getMap();
 		
