@@ -1,6 +1,6 @@
 # Throttle Throttle My Threads
 
-
+# problem
 
 1. multiple users submit individual requests into the system, each in a different volume and
 rate (e.g. user Alice submits 1000 requests every minute, while user Bob submits 5 requests
@@ -14,8 +14,8 @@ practice fairness in handling the request of the different users, so that handli
 requests will not starve the other users.
 
 
+# solution
 
-# Multiple users submit individual requests
 i choose to have a ConcurrentHashMap 
   - the key will be the userId 
   - the value is an object that will mangae his own request
