@@ -12,6 +12,7 @@ public class Handler {
 	}
 
 	public static void handleRequest(Request req) throws InterruptedException {
+		// please consider this as a static route and not a new map every request
 		new MapHelper(conMap, req);
 
 	}
