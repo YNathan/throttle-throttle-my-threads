@@ -11,8 +11,8 @@ public class Handler {
 		printerThread();
 	}
 
-	public static void handleRequest(Request req) throws InterruptedException {
-		// please consider this as a static route and not a new map every request
+	
+	public static void handleRequest(Request req) throws InterruptedException {	
 		new MapHelper(conMap, req);
 
 	}
