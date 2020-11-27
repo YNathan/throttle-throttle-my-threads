@@ -1,7 +1,21 @@
 # Throttle Throttle My Threads
 
+# problem
 
-# Multiple users submit individual requests
+1. multiple users submit individual requests into the system, each in a different volume and
+rate (e.g. user Alice submits 1000 requests every minute, while user Bob submits 5 requests
+every second, etc.).
+2. Each user’s requests need to be processed in the order by which they were submitted, but
+there is no order between different users. For example, it is possible that user Alice’s
+requests, which have been submitted at 9:00am will be handled – in order – only after user
+Bob’s requests, which have been submitted at 9:01am.
+Since there is a variance in volume and rate between the users, the system should
+practice fairness in handling the request of the different users, so that handling user Alice’s
+requests will not starve the other users.
+
+
+# solution
+
 i choose to have a ConcurrentHashMap 
   - the key will be the userId 
   - the value is an object that will mangae his own request

@@ -11,7 +11,8 @@ public class Handler {
 		printerThread();
 	}
 
-	public static void handleRequest(Request req) throws InterruptedException {
+	
+	public static void handleRequest(Request req) throws InterruptedException {	
 		new MapHelper(conMap, req);
 
 	}
